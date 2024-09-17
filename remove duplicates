@@ -1,0 +1,36 @@
+import java.util.Scanner;
+public class duplicatenumbers
+{
+	public static void main(String args[])
+	{
+		Scanner s=new Scanner(System.in);
+		int n;
+		n=s.nextInt();
+		int a[]=new int[n];
+		System.out.print("Enter Elements:");
+		for(int i=0;i<n;i++)
+		{
+			a[i]=s.nextInt(); }
+		int b[]=new int[n];
+	
+		int p=0;
+		for(int i=0;i<n;i++)
+		{
+		int c=1;
+			
+			for(int j=i+1;j<n;j++)
+			{
+				if(a[i]==a[j])
+				{
+				c=0;
+				break; } }
+				if(c==1)
+				{
+				
+					b[p]=a[i];
+				p++; }
+		}
+					System.out.println("The elements are:");
+		for(int i=0;i<p;i++)
+		{
+System.out.print(b[i]+" "); }} }
