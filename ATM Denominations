@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+class Denominations {
+    public static void main(String args[]) {
+        Scanner s = new Scanner(System.in);
+        int nh = 0, nt = 0, nf = 0, ntwo = 0;
+        int c = 0;
+        while (c != 4) {
+            System.out.print("Enter denomination " + (c + 1) + ": ");
+            int x = s.nextInt();         
+            switch (x) {
+                case 500 -> {
+                    System.out.print("Enter number of notes: ");
+                    nf = s.nextInt();
+                    c++;  // Move to next denomination
+                }
+                case 100 -> {
+                    System.out.print("Enter number of notes: ");
+                    nh = s.nextInt();
+                    c++;
+                }
+                case 200 -> {
+                    System.out.print("Enter number of notes: ");
+                    nt = s.nextInt();
+                    c++;
+                }
+                case 2000 -> {
+                    System.out.print("Enter number of notes: ");
+                    ntwo = s.nextInt();
+                    c++;
+                }
+                default -> System.out.println("Invalid denomination! Please enter 100, 200, 500, or 2000.");
+            }
+        }
+        int totalAmount = (nh * 100) + (nt * 200) + (nf * 500) + (ntwo * 2000);
+        System.out.println("\nThe total amount is: " + totalAmount);
+    }
+}
