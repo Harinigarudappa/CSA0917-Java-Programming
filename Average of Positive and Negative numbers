@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class avgposneg{
+	public static void main(String args[])
+	{
+		Scanner s=new Scanner(System.in);
+		int n=0;
+		int sump=0,sumn=0;
+		double avgp=0,avgn=0;
+		int c1=0,c2=0;
+		while(true)
+		{
+			System.out.println("Enter Number :");
+			n=s.nextInt();
+			if(n==-1)
+			{
+			break; }
+			else if(n>=0)
+			{
+			c1++;
+			sump=sump+n;
+			}
+			else 
+			{
+				c2++;
+				sumn+=n;
+		} }
+		avgp=sump/c1;
+		avgn=sumn/c2;
+		System.out.println("Avg of Positive:"+avgp);
+		System.out.println("Avg of Negitive:"+avgn); }}
