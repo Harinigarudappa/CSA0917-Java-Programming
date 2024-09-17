@@ -1,0 +1,20 @@
+class A extends Thread {
+    public void run() {
+        for (int i = 1; i <= 10; i++) 
+        System.out.println(5 + " X " + i + " = " + (5 * i));
+    }
+}
+
+class B extends Thread {
+    public void run() {
+        for (int i = 1; i <= 10; i++) 
+        System.out.println(10 + " X " + i + " = " + (10 * i));
+    }
+}
+
+public class ShortThreadExample {
+    public static void main(String[] args) {
+        new A().start();
+        new B().start();
+    }
+}
