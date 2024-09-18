@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class Set1_2
+{
+	public static void main(String args[])
+	{
+		Scanner s=new Scanner(System.in);
+		System.out.print("Enter No of Days:");
+		int days=s.nextInt();
+		int years,weeks,d;
+		years=days/365;
+		days=days-(years*365);
+		weeks=days/7;
+		days=days-(weeks*7);
+		System.out.println("years:"+years);
+		System.out.println("Weeks:"+weeks);
+		System.out.println("Days:"+days); }}
