@@ -1,0 +1,14 @@
+import java.util.Scanner;
+class Set3_4
+{
+	public static void main(String args[])
+	{
+		Scanner s=new Scanner(System.in);
+		int t,stu,staff,n;
+		System.out.print("Enter Total:");
+		t=s.nextInt();
+		System.out.print("Enter Staff:");
+		staff=s.nextInt();
+		n=staff/3;
+		stu=(t-staff-n);
+		System.out.print("Student Users:"+stu); }}
