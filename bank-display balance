@@ -1,0 +1,35 @@
+import java.util.Scanner;
+class BankAccount {
+    String name;
+    double balance;
+    BankAccount(String n, double b) {
+        name = n;
+        balance = b;
+    }
+    void deposit(double amount) {
+        if (amount > 0) balance += amount;
+    }
+    void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) balance -= amount;
+    }
+    void display() {
+        System.out.println("Name: " + name + ", Balance: " + balance);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter name: ");
+        String name = input.next();
+        System.out.print("Enter initial balance: ");
+        double balance = input.nextDouble();
+        BankAccount account = new BankAccount(name, balance);
+        account.display();
+        System.out.print("Enter amount to deposit: ");
+        account.deposit(input.nextDouble());
+        System.out.print("Enter amount to withdraw: ");
+        account.withdraw(input.nextDouble());
+        account.display();
+        input.close();
+    }
+}
