@@ -30,3 +30,38 @@ public class bonus {
         }
     }
 }
+                                 or
+
+import java.util.Scanner;
+public class employeebonus{
+    public static void main(String[] args) {
+    
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("enter the employee salary:");
+        double salary=scanner.nextDouble();
+        System.out.println("enter the employee grade(A/B)");
+        char grade = scanner.next().charAt(0);
+                double bonus=0;
+        if(grade=='A'||grade=='a')
+        {
+            bonus=salary*0.05;
+        }
+        else if(grade=='B'||grade=='b')
+        {
+            bonus=salary*0.10;
+        }
+        else
+        {
+            System.out.println("invalid input");
+        }
+        if(salary<10000)
+        {
+            bonus+=salary+0.02;
+        }
+        double totalsalary=salary+bonus;
+        System.out.println("bonus:%.2f\n"+bonus);
+        System.out.println("totalsalary:%2f\n"+totalsalary);
+        scanner.close();
+    
+    }
+}
