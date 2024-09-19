@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class ak {
+
+    public static int reverse(int num) {
+        int rev = 0;
+        while (num > 0) {
+            rev = rev * 10 + num % 10;
+            num /= 10;
+        }
+        return rev;
+    }
+
+    public static void makePalindrome(int num) {
+        while (num != reverse(num)) {
+            int rev = reverse(num);
+            int sum = num + rev;
+            System.out.println(num + " + " + rev + " = " + sum);
+            num = sum;
+        }
+        System.out.println("Palindrome: " + num);
+    }
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = input.nextInt();
+        makePalindrome(num);
+        input.close();
+    }
+}
