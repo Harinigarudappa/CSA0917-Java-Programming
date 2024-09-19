@@ -17,3 +17,30 @@ public static void main(String args[])
 	System.out.println("The Min is :"+a[min-1]);
 	Arrays.sort(a,Collections.reverseOrder());
 	System.out.println("The Max is :"+a[max-1]); }}
+
+                         or
+
+import java.util.*;
+public class mthnth {
+    public static void main(String args[]) {
+        int n, max, min;
+        Scanner s = new Scanner(System.in);
+        n = s.nextInt();
+        Integer a[] = new Integer[n];
+        for (int i = 0; i < n; i++) {
+            a[i] = s.nextInt();
+        }
+        max = s.nextInt();
+        min = s.nextInt();
+        Arrays.sort(a);
+        int minValue = a[min - 1]; 
+        int maxValue = a[n - max]; 
+        System.out.println("The Min is: " + minValue);
+        System.out.println("The Max is: " + maxValue);
+        int sum = minValue + maxValue;
+        int difference = maxValue - minValue;
+        System.out.println("Sum of Min and Max: " + sum);
+        System.out.println("Difference between Max and Min: " + difference);
+    }
+}
+
