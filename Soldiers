@@ -1,0 +1,44 @@
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Input for number of rows and columns
+        System.out.print("Enter number of rows: ");
+        int rows = scanner.nextInt();
+        System.out.print("Enter number of columns: ");
+        int cols = scanner.nextInt();
+        
+        int[][] arr = new int[rows][cols];
+        int[] countOnes = new int[rows];
+        
+        // Input array elements and count 1's in each row
+        for (int i = 0; i < rows; i++) {
+            System.out.println("Enter elements for row " + (i + 1) + ":");
+            for (int j = 0; j < cols; j++) {
+                arr[i][j] = scanner.nextInt();
+                if (arr[i][j] == 1) {
+                    countOnes[i]++;
+                }
+            }
+        }
+        
+        // Create a list of indices sorted by the number of 1's
+        List<Integer> indices = new ArrayList<>();
+        for (int i = 0; i < rows; i++) {
+            indices.add(i);
+        }
+        indices.sort(Comparator.comparingInt(i -> countOnes[i]));
+        
+        // Input for number of least elements to display
+        System.out.print("Number of least elements index you want: ");
+        int indexCount = scanner.nextInt();
+        
+        // Output the indices of rows with the least number of 1's
+        System.out.println("Indices of rows with least number of 1's:");
+        for (int i = 0; i < indexCount && i < indices.size(); i++) {
+            System.out.print(indices.get(i) + " ");
+        }
+    }
+}
