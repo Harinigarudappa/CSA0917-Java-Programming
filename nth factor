@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = input.nextInt();
+        System.out.print("Enter the index of the factor you want: ");
+        int n = input.nextInt();
+        
+        int[] factors = new int[100]; 
+        int count = 0; 
+        for (int i = 1; i <= num; i++) {
+            if (num % i == 0) {
+                factors[count] = i; 
+                count++; 
+            }
+        }
+        System.out.println("Number of factors = " + count);
+        if (n > 0 && n <= count) {
+            System.out.println(n + " factor of " + num + " = " + factors[n - 1]);
+        } else {
+            System.out.println("Invalid index: " + n);
+        }
+    }
+}
